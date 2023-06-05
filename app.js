@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/api/authRoutes");
 const profileRoutes = require("./routes/api/profileRoutes");
-
+const newsRoutes = require("./routes/api/newsRoutes");
 const app = express();
 require("dotenv").config();
 // Підключення
@@ -24,6 +24,7 @@ app.use("/uploads", express.static("uploads"));
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
 
+app.use("/news", newsRoutes);
 app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
