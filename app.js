@@ -4,6 +4,7 @@ const authRoutes = require("./routes/api/authRoutes");
 const profileRoutes = require("./routes/api/profileRoutes");
 const newsRoutes = require("./routes/api/newsRoutes");
 const postRoutes = require("./routes/api/postRoutes");
+const projectsRoutes = require("./routes/api/projectsRoutes");
 const app = express();
 require("dotenv").config();
 // Підключення
@@ -28,6 +29,8 @@ app.use("/profile", profileRoutes);
 app.use("/news", newsRoutes);
 
 app.use("/posts", postRoutes);
+
+app.use("/projects", projectsRoutes);
 app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
