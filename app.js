@@ -5,6 +5,8 @@ const profileRoutes = require("./routes/api/profileRoutes");
 const newsRoutes = require("./routes/api/newsRoutes");
 const postRoutes = require("./routes/api/postRoutes");
 const projectsRoutes = require("./routes/api/projectsRoutes");
+const resourceRoutes = require("./routes/api/resourceRoutes");
+const commentRoutes = require("./routes/api/commentRoutes");
 const app = express();
 require("dotenv").config();
 // Підключення
@@ -31,6 +33,12 @@ app.use("/news", newsRoutes);
 app.use("/posts", postRoutes);
 
 app.use("/projects", projectsRoutes);
+
+// Маршрути для ресурсів
+app.use("/resources", resourceRoutes);
+
+// Маршрути для коментарів
+app.use("/comments", commentRoutes);
 app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
